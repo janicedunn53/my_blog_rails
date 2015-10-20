@@ -8,11 +8,13 @@
   <p><%= f.label :content %>
   <%= f.text_area :content %></p>
 
-  <strong>Add Tags:</strong><br>
+  <h4>Add Tags:</h4>
+    <ul>
     <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :description) do |b| %>
-      <%= b.label { b.check_box } %>
-      <%= b.object.description %>
+      <li><%= b.label { b.check_box } %>
+      <%= b.object.description %></li>
     <% end %>
+    </ul>
 
   <%= f.submit %>
 <% end %>
