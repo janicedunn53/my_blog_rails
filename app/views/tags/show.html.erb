@@ -1,0 +1,9 @@
+<h1>Posts with the tag <%= @tag.description %></h1>
+
+<% @tag.posts.each do |post| %>
+  <%= link_to post.title, post_path(post) %>
+<% end %>
+
+<hr>
+
+<%= link_to "Back to Homepage", posts_path %>

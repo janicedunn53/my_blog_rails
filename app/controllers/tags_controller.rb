@@ -15,6 +15,10 @@ class TagsController < ApplicationController
     end
   end
 
+  def show
+    @tag = Tag.find(params[:tag_id])
+  end
+
   def edit
     @post = Post.find(params[:post_id])
     @tag = Tag.find(params[:id])
