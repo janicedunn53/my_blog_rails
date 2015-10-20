@@ -1,20 +1,6 @@
-<h1>Posts</h1>
-
-<ul>
-  <% @posts.each do |post| %>
-    <li><%= link_to post.title, post_path(post) %></li>
-  <% end %>
-</ul>
-
-<h1>Tags</h1>
-
-<ul>
-  <% @tags.each do |tag| %>
-    <li><%= link_to tag.description, tag_path(tag) %></li>
-  <% end %>
-</ul>
-
-<hr>
+<%= render 'listing' %>
 
 <p><%= link_to "New Post", new_post_path %></p>
-<p><%= link_to "All Tags", tags_path %></p>
+
+<hr>
+<%= link_to "Back to Homepage", root_path %>
