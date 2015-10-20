@@ -1,0 +1,17 @@
+<h1>All Tags</h1>
+
+<% @tags.each do |tag| %>
+  <%= tag.description %>
+    <% if tag.posts.any? %>
+      <ul>
+        <% tag.posts.each do |post| %>
+        <li><%= link_to post.title, post_path(post) %></li>
+        <% end %>
+      </ul>
+    <% else %>
+      <p>There are no posts with this tag.</p>
+    <% end %>
+<% end %>
+
+<h3>Create a new tag:</h3>
+<%= render 'form' %>

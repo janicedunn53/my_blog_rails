@@ -6,6 +6,15 @@
   <% end %>
 </ul>
 
+<h1>Tags</h1>
+
+<ul>
+  <% @tags.each do |tag| %>
+    <li><%= link_to tag.description, tag_path(tag) %></li>
+  <% end %>
+</ul>
+
 <hr>
 
-<%= link_to "New Post", new_post_path %>
+<p><%= link_to "New Post", new_post_path %></p>
+<p><%= link_to "All Tags", tags_path %></p>

@@ -1,6 +1,10 @@
 class TagsController < ApplicationController
+  def index
+    @tags = Tag.all
+    @tag = Tag.new
+  end
+
   def new
-    @post = Post.find(params[:post_id])
     @tag = @post.tags.new
   end
 
