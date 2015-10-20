@@ -1,0 +1,9 @@
+<h1>My Blog</h1>
+
+<%= render 'posts/listing' %>
+<p><%= link_to "Add a New Post", new_post_path(@post) %></p>
+
+<br>
+
+<%= render 'tags/listing' %>
+<p><%= link_to "Add a New Tag", new_tag_path(@tag) %></p>

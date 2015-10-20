@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
   def index
     @posts = Post.all
+    @tags = Tag.all
   end
 
   def new
@@ -22,6 +23,7 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    @tags = @post.tags
   end
 
   def update
@@ -29,6 +31,7 @@ class PostsController < ApplicationController
     if @post.update(post_params)
       redirect_to post_path(@post)
     else
+      @tags = @post.tags
       render :edit
     end
   end
@@ -41,6 +44,6 @@ class PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:title, :content)
+    params.require(:post).permit(:title, :content, :tag_ids => [])
   end
 end

@@ -1,0 +1,10 @@
+<% if @tags.any? %>
+  <h1>Tags:</h1>
+  <ul>
+    <% @tags.each do |tag| %>
+      <li><%= link_to tag.description, tag_path(tag) %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>There are no tags yet.</p>
+<% end %>
